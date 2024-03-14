@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RakaminChallenge</string>
+    <string name="tittle">Mandiri News</string>
+    <string name="headline">Berita Terkini</string>
+    <string name="news">Semua Berita</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="text_title_favorite">Fab_Favorite</string>
+</resources>

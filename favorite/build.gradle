@@ -1,0 +1,45 @@
+plugins {
+    id 'com.android.dynamic-feature'
+    id 'org.jetbrains.kotlin.android'
+    id "kotlin-parcelize"
+    id "kotlin-kapt"
+    id "dagger.hilt.android.plugin"
+}
+
+apply {
+    from("../shared_dependencies.gradle")
+}
+
+android {
+    namespace 'coding.faizal.rakaminchallenge.favorite'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 24
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures{
+        viewBinding = true
+    }
+
+    lint {
+        disable += "MissingTranslation"
+        disable += "TypographyFractions"
+        abortOnError = false
+        checkReleaseBuilds =  false
+        lintConfig = file("$rootDir/linter.xml")
+    }
+}
+
+dependencies {
+    implementation(project(":app"))
+    implementation(project(":core"))
+}

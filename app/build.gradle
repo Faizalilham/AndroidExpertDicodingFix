@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+apply from: '../shared_dependencies.gradle'
+
+android {
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "coding.faizal.rakaminchallenge"
+        minSdk 21
+        //noinspection ExpiredTargetSdkVersion
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        buildConfigField 'String','NEWS_API_KEY','"f36b8bb468b841ffb584a3dc760fc407"'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    buildFeatures{
+        viewBinding true
+        buildConfig true
+    }
+    dynamicFeatures = [':favorite']
+    lint {
+        disable += "MissingTranslation"
+        disable += "TypographyFractions"
+        abortOnError = false
+        checkReleaseBuilds =  false
+        lintConfig = file("$rootDir/linter.xml")
+    }
+}
+
+dependencies {
+
+    implementation project(":core")
+
+
+
+}

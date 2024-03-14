@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="IconLocation">
+        <ignore path="/home/faizal/AndroidStudioProjects/RakaminChallenge/app/src/main/res/drawable/ic_mandiri.png" />
+        <ignore path="/home/faizal/AndroidStudioProjects/RakaminChallenge/app/src/main/res/drawable/ic_mandiri.png" />
+        <ignore path="/home/faizal/AndroidStudioProjects/RakaminChallenge/app/src/main/res/drawable/ic_mandiri.png" />
+        <ignore path="/home/faizal/AndroidStudioProjects/RakaminChallenge/app/src/main/res/drawable/ic_splash.png" />
+        <ignore path="/home/faizal/AndroidStudioProjects/RakaminChallenge/app/src/main/res/drawable/ic_splash.png" />
+        <ignore path="/home/faizal/AndroidStudioProjects/RakaminChallenge/app/src/main/res/drawable/ic_splash.png" />
+    </issue>
+</lint>
